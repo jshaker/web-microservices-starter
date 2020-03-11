@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    volumes:
+      - ./frontend:/usr/src/app/:rw
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    command: npm start
+
+  service1:
+    volumes:
+    - ./service1/:/usr/src/app/:rw
+    command: npm start
+
